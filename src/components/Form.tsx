@@ -12,14 +12,17 @@ function DataForm() {
   });
 
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formElements = e.currentTarget;
     const formData = new FormData(formElements);
 
+    setLoading(true);
+
     fetch(
-      "https://script.google.com/macros/s/AKfycbyUu52_Al6gA6Fzi5Y9l8gdx1THeYMkakNOlx3hc5GwqcjlkdOkyG8fAeDDvRtlaKHUTQ/exec",
+      "https://script.google.com/macros/s/AKfycbwodnDj_rJR-VLewutg-fUmx5tucj26bqX1E875yc7BWQfAafqkrbeyf1mKleKvvZ4OXw/exec",
       {
         method: "POST",
         body: formData,
@@ -40,6 +43,9 @@ function DataForm() {
       })
       .catch((error) => {
         console.error("Error:", error);
+      })
+      .finally(() => {
+        setLoading(false); // Set loading to false when submission is complete
       });
   };
   const handleClearAll = () => {
@@ -119,13 +125,14 @@ function DataForm() {
           </Form.Group>
         </Row>
         <div className="d-flex">
-          <Button className="submit-btn" type="submit">
-            Send
+          <Button className="submit-btn" type="submit" disabled={loading}>
+            {loading ? "Sending..." : "Send"}
           </Button>
           <Button
             className="clear-all-btn"
             type="button"
             onClick={handleClearAll}
+            disabled={loading}
           >
             Clear All
           </Button>
