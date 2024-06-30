@@ -19,7 +19,7 @@ function DataForm() {
     const formData = new FormData(formElements);
 
     fetch(
-      "https://script.google.com/macros/s/AKfycbxBFP9vy8KFvbCHZvSr7DlUiPGGcjX4SeHVqXFkmmhRLbkCL4WfsTnCcfL06FgQL0LbGw/exec",
+      "https://script.google.com/macros/s/AKfycbyUu52_Al6gA6Fzi5Y9l8gdx1THeYMkakNOlx3hc5GwqcjlkdOkyG8fAeDDvRtlaKHUTQ/exec",
       {
         method: "POST",
         body: formData,
