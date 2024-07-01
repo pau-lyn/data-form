@@ -3,6 +3,7 @@ body{
     padding: 0;
     background-color: #faf8f8;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100vw;
 }
 .header{
     width: 50vw;
@@ -26,7 +27,7 @@ svg{
 }
 
 form{
-    width: 50vw;
+    width: 50%;
     margin: .5em auto;
     padding: 2em 3em;
     border-radius: 1em;
@@ -107,13 +108,13 @@ textarea {
     }
   }
 
-@media only screen and (max-width: 600px){
-    form{
-        width: 100vw;
-        background-color: none;
+  @media (max-width: 728px){
+    form, .header{
+        width: 100%;
+        padding: 0;
     }
-    .header{
-        width: 100vw;
+    .form-data{
+        margin: 0 1em;
     }
     h1{
         font-size: 28px;

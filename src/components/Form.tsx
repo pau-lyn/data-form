@@ -38,14 +38,14 @@ function DataForm() {
           });
           setTimeout(() => {
             setSubmitSuccess(false);
-          }, 3000); // Clear success message after 3 seconds
+          }, 3000);
         }
       })
       .catch((error) => {
         console.error("Error:", error);
       })
       .finally(() => {
-        setLoading(false); // Set loading to false when submission is complete
+        setLoading(false);
       });
   };
   const handleClearAll = () => {
@@ -67,7 +67,7 @@ function DataForm() {
   };
 
   return (
-    <div>
+    <div className="form-data">
       <div className="header">
         <h1 className="">
           Send me a message! <SmileIcon />
