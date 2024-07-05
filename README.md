@@ -5,3 +5,7 @@ This project is a simple data form built with React, TypeScript, HTML, and CSS. 
 **Google Sheets Integration**: Data is stored in a Google Sheet using Google Apps Script.
 
 This project uses React, TypeScript, and Vite.
+
+## Usage
+
+You can visit: https://pau-lyn.github.io/data-form/
